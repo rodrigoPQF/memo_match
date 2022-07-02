@@ -136,21 +136,20 @@ def draw_board():
     for i in range(cols3):
         for j in range(rows3):
             piece = pygame.draw.rect(
-                screen, WHITE, [i * 75 + 12, j * 65 + 112, 50, 50], 0, 4)
+                screen, WHITE, [i * 75 + 82, j * 65 + 112, 50, 50], 0, 4)
             board_list.append(piece)
-            print(spaces[i * rows3 + j])
             piece_text = small_font.render(
                 f'{spaces[i * rows3 + j]}', True, GRAY)
-            screen.blit(piece_text, (i * 75 + 18, j * 65 + 120))
+            screen.blit(piece_text, (i * 75 + 86, j * 65 + 120))
 
     for r in range(rows3):
         for c in range(cols3):
             if correct3[r][c] == 1:
                 pygame.draw.rect(
-                    screen, GREEN, [c * 75 + 10, r * 65 + 110, 54, 54], 3, 4)
+                    screen, GREEN, [c * 75 + 82, r * 65 + 110, 54, 54], 3, 4)
                 piece_text = small_font.render(
                     f'{spaces[c * rows3 + r]}', True, BLACK)
-                screen.blit(piece_text, (c * 75 + 18, r * 65 + 120))
+                screen.blit(piece_text, (c * 75 + 86, r * 65 + 120))
 
     return board_list
 
@@ -250,14 +249,14 @@ while running:
     if first_guess:
         piece_text = small_font.render(
             f'{spaces[first_guess_num]}', True, BLUE)
-        location = (first_guess_num // rows3 * 75 + 18,
+        location = (first_guess_num // rows3 * 75 + 86,
                     (first_guess_num - (first_guess_num // rows3 * rows3)) * 65 + 120)
         screen.blit(piece_text, (location))
 
     if second_guess:
         piece_text = small_font.render(
             f'{spaces[second_guess_num]}', True, BLUE)
-        location = (second_guess_num // rows3 * 75 + 18,
+        location = (second_guess_num // rows3 * 75 + 86,
                     (second_guess_num - (second_guess_num // rows3 * rows3)) * 65 + 120)
         screen.blit(piece_text, (location))
 
