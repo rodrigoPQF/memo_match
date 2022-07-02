@@ -138,9 +138,9 @@ def draw_board():
             piece = pygame.draw.rect(
                 screen, WHITE, [i * 75 + 82, j * 65 + 112, 50, 50], 0, 4)
             board_list.append(piece)
-            piece_text = small_font.render(
-                f'{spaces[i * rows3 + j]}', True, GRAY)
-            screen.blit(piece_text, (i * 75 + 86, j * 65 + 120))
+            # piece_text = small_font.render(
+            #     f'{spaces[i * rows3 + j]}', True, GRAY)
+            # screen.blit(piece_text, (i * 75 + 86, j * 65 + 120))
 
     for r in range(rows3):
         for c in range(cols3):
